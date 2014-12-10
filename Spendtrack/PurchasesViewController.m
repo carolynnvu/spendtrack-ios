@@ -56,7 +56,7 @@
     Purchase *purchase = (self.purchases)[indexPath.row];
     cell.nameLabel.text = purchase.name;
     cell.categoryLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
-    cell.purchaseImageView.image = [UIImage imageNamed:@"1Star"];
+    cell.purchaseImageView.image = [UIImage imageNamed:@"creme_brelee"];
     
     return cell;
 }
