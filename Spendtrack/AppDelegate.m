@@ -29,6 +29,11 @@
     purchase.category = @"Tic-Tac-Toe";
     [_purchases addObject:purchase];
     
+    Purchase *purchase1 = [[Purchase alloc] init];
+    purchase1.name = @"asdf";
+    purchase1.category = @"Tgfds";
+    [_purchases addObject:purchase1];
+    
     UITabBarController *tabBarController =  (UITabBarController *)self.window.rootViewController;
     UINavigationController *navigationController = [tabBarController viewControllers][0];
     PurchasesViewController *purchasesViewController = [navigationController viewControllers][0];

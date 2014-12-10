@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7204AC6C-8500-4655-91BC-E10F8EDFAF2C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Spendtrack</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>58BFCC2F390118971B2D823AB999D0C10B5CC83F</key>
+		<string>https://github.com/carolynnvu/spendtrack-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Spendtrack.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>58BFCC2F390118971B2D823AB999D0C10B5CC83F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/carolynnvu/spendtrack-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>58BFCC2F390118971B2D823AB999D0C10B5CC83F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>58BFCC2F390118971B2D823AB999D0C10B5CC83F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Spendtrack</string>
+		</dict>
+	</array>
+</dict>
+</plist>
