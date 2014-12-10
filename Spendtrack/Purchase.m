@@ -10,4 +10,24 @@
 
 @implementation Purchase
 
+-(Purchase*) initWithName:(NSString*)name
+              andPrice:(double)price {
+    
+    if(self=[super init]) {
+        _name = name;
+        _price = price;
+
+    }
+    return self;
+}
+
++(Purchase*) createPurchaseWithName: (NSString*)name
+                andPrice:(double)price {
+    
+    Purchase* entry = [[Purchase alloc] initWithName:name
+                                            andPrice:price];
+    return entry;
+}
+
+
 @end

@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Purchase.h"
 
 @interface Purchase : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *category;
+@property (nonatomic) double price;
+
+-(Purchase*) initWithName:(NSString*)name
+             andPrice:(double)price;
+
++(Purchase*) createPurchaseWithName:(NSString*)name
+                      andPrice:(double)price;
+
 
 @end

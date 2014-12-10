@@ -33,7 +33,7 @@
 
 -(UIImage*)imageForPurchase:(int)purchase {
     //Mock photos for now.
-    return [UIImage imageNamed:@"1Star"];
+    return [UIImage imageNamed:@"angry_birds_cake"];
 }
 
 #pragma mark - Table view data source
@@ -55,7 +55,7 @@
     
     Purchase *purchase = (self.purchases)[indexPath.row];
     cell.nameLabel.text = purchase.name;
-    cell.categoryLabel.text = purchase.category;
+    cell.categoryLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
     cell.purchaseImageView.image = [UIImage imageNamed:@"1Star"];
     
     return cell;
