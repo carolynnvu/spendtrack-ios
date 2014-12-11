@@ -30,7 +30,7 @@
                                                  andPhoto:_addImage
                                               andCategory:_addCat];
     [_root addPurchase:purchase];
-
+    NSLog(@"Just added %lu", [_root.purchases count]);
     
 }
 
@@ -60,7 +60,7 @@
     
     _root = (RootViewController*) [self tabBarController];
     _root.purchases = [[NSMutableArray alloc] init];
-    _addImage = [UIImage imageWithContentsOfFile: @"full_breakfast"];
+    _addImage = [UIImage imageNamed : @"full_breakfast"];
     _addCat = @"Low";
 }
 
@@ -106,13 +106,16 @@
 -(IBAction)textFieldDoneEditing:(id)sender{
     [sender resignFirstResponder];
 }
-/*
+
 //Touching background to close keyboard
 -(IBAction)backTap:(id)sender{
     [self.addName resignFirstResponder];
     [self.addPrice resignFirstResponder];
 }
- */
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[self view] endEditing:YES];
+}
 
 /*
 #pragma mark - Navigation

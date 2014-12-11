@@ -221,7 +221,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kok-NP-LYD">
                                 <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-16" y="299" width="400" height="162"/>
+                                    <rect key="frame" x="-13" y="319" width="400" height="162"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="EqE-8P-7Qb" id="UQD-Sb-eat"/>
@@ -246,7 +246,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="161" y="452" width="63" height="30"/>
+                                    <rect key="frame" x="161" y="475" width="63" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="clickedAddItem:" destination="EqE-8P-7Qb" eventType="touchUpInside" id="bfu-e7-kr9"/>
@@ -288,6 +288,7 @@
                         <outlet property="addItem" destination="M3h-dh-CEz" id="xLz-u2-LQh"/>
                         <outlet property="addName" destination="cqG-yM-k4C" id="9hg-lO-gZj"/>
                         <outlet property="addPhoto" destination="nGC-s2-Ol8" id="IfY-xS-hVG"/>
+                        <outlet property="addPrice" destination="iVJ-me-aq4" id="AAa-13-abP"/>
                         <outlet property="categoryPicker" destination="kok-NP-LYD" id="bta-3l-5QB"/>
                     </connections>
                 </viewController>
