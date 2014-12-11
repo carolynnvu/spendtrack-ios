@@ -27,13 +27,13 @@
     
     Purchase *purchase = [Purchase createPurchaseWithName:@"Tacos"
                                                  andPrice:35.95
-                                                 andPhoto:[UIImage imageWithContentsOfFile: @"full_breakfast"]
+                                                 andPhoto:[UIImage imageNamed: @"full_breakfast"]
                                               andCategory:@"High"];
     [_root addPurchase:purchase];
     
     Purchase *purchase1 = [Purchase createPurchaseWithName:@"Shoes"
                                                   andPrice:17.99
-                                                  andPhoto:[UIImage imageWithContentsOfFile:@"creme_brelee"]
+                                                  andPhoto:[UIImage imageNamed:@"creme_brelee"]
                                                andCategory:@"Low"];
     [_root addPurchase:purchase1];
     
