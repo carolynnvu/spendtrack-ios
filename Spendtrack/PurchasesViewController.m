@@ -30,13 +30,13 @@
                                                  andPrice:35.95
                                                  andPhoto:@"full_breakfast"
                                               andCategory:@"High"];
-    [_root.purchases addObject:purchase];
+    [_root addPurchase:purchase];
     
     Purchase *purchase1 = [Purchase createPurchaseWithName:@"Shoes"
                                                   andPrice:17.99
                                                   andPhoto:@"creme_brelee"
                                                andCategory:@"Low"];
-    [_root.purchases addObject:purchase1];
+    [_root addPurchase:purchase1];
 
     
     // Uncomment the following line to preserve selection between presentations.

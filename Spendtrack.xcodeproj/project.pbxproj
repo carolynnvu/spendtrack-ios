@@ -18,6 +18,8 @@
 		7DAE8F6C1A38E38C0071EB83 /* Purchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE8F6B1A38E38C0071EB83 /* Purchase.m */; };
 		7DAE8F6F1A38F1190071EB83 /* PurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE8F6E1A38F1190071EB83 /* PurchaseTableViewCell.m */; };
 		7DAE8F721A391D4E0071EB83 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE8F711A391D4E0071EB83 /* RootViewController.m */; };
+		7DAE8F751A392C270071EB83 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE8F741A392C270071EB83 /* AddViewController.m */; };
+		7DAE8F7B1A3967860071EB83 /* PurchasesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE8F7A1A3967860071EB83 /* PurchasesCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		7DAE8F6E1A38F1190071EB83 /* PurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTableViewCell.m; sourceTree = "<group>"; };
 		7DAE8F701A391D4E0071EB83 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		7DAE8F711A391D4E0071EB83 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		7DAE8F731A392C260071EB83 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		7DAE8F741A392C270071EB83 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		7DAE8F791A3967860071EB83 /* PurchasesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasesCollectionViewController.h; sourceTree = "<group>"; };
+		7DAE8F7A1A3967860071EB83 /* PurchasesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasesCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +106,12 @@
 				7DAE8F481A38E0A00071EB83 /* ViewController.h */,
 				7DAE8F491A38E0A00071EB83 /* ViewController.m */,
 				7DAE8F4B1A38E0A00071EB83 /* Main.storyboard */,
+				7DAE8F791A3967860071EB83 /* PurchasesCollectionViewController.h */,
+				7DAE8F7A1A3967860071EB83 /* PurchasesCollectionViewController.m */,
 				7DAE8F6D1A38F1190071EB83 /* PurchaseTableViewCell.h */,
 				7DAE8F6E1A38F1190071EB83 /* PurchaseTableViewCell.m */,
+				7DAE8F731A392C260071EB83 /* AddViewController.h */,
+				7DAE8F741A392C270071EB83 /* AddViewController.m */,
 				7DAE8F671A38E3000071EB83 /* PurchasesViewController.h */,
 				7DAE8F681A38E3000071EB83 /* PurchasesViewController.m */,
 				7DAE8F6A1A38E38C0071EB83 /* Purchase.h */,
@@ -245,7 +255,9 @@
 				7DAE8F6F1A38F1190071EB83 /* PurchaseTableViewCell.m in Sources */,
 				7DAE8F691A38E3000071EB83 /* PurchasesViewController.m in Sources */,
 				7DAE8F471A38E0A00071EB83 /* AppDelegate.m in Sources */,
+				7DAE8F751A392C270071EB83 /* AddViewController.m in Sources */,
 				7DAE8F441A38E0A00071EB83 /* main.m in Sources */,
+				7DAE8F7B1A3967860071EB83 /* PurchasesCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

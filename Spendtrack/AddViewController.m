@@ -1,28 +1,31 @@
 //
-//  RootViewController.m
+//  AddViewController.m
 //  Spendtrack
 //
 //  Created by Carolynn Vu on 12/10/14.
 //  Copyright (c) 2014 Carolynn Vu and Christina Chan. All rights reserved.
 //
 
+#import "AddViewController.h"
 #import "RootViewController.h"
 
-@interface RootViewController ()
+@interface AddViewController ()
+
 
 @end
 
-@implementation RootViewController
+@implementation AddViewController
 
--(void)addPurchase: (Purchase*)purchase {
-    [_purchases addObject:purchase];
-}
-    
-
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //Don't re-init RootViewController here.
 }
+
+-(void)viewDidAppear {
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
