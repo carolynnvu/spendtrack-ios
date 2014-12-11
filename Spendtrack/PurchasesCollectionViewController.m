@@ -7,14 +7,19 @@
 //
 
 #import "PurchasesCollectionViewController.h"
+#import "PurchaseCollectionViewCell.h"
+#import "RootViewController.h"
+#import "Purchase.h"
 
 @interface PurchasesCollectionViewController ()
+
+@property (strong, nonatomic) RootViewController *root;
 
 @end
 
 @implementation PurchasesCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+//static NSString * const reuseIdentifier = @"PurchaseCollectionCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,9 +28,16 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+//    _root = (RootViewController*) [self tabBarController];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    _root = (RootViewController*) [self tabBarController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,18 +58,29 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
+    return 1;
 }
 
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    NSLog(@"Number of items %lu", [_root.purchases count]);
+    return [_root.purchases count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+//    static NSString *identifier = @"PurchaseCollectionCell";
+//    
+//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+//    
+//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
+////    recipeImageView.image = [UIImage imageNamed:[recipePhotos objectAtIndex:indexPath.row]];
+//    recipeImageView.image = [UIImage imageNamed:@"angry_birds_cake.png"];
+//    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
+    
+    PurchaseCollectionViewCell *cell = (PurchaseCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"PurchaseCollectionCell" forIndexPath:indexPath];
+    
+    Purchase *purchase = (_root.purchases)[indexPath.row];
+    cell.purchaseImageView.image = [UIImage imageNamed:@"angry_birds_cake"];
+    
     
     // Configure the cell
     

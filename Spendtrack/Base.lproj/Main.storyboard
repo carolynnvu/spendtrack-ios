@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="1563" y="-654"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Purchases Collection View Controller-->
         <scene sceneID="nRc-Uq-lKA">
             <objects>
-                <collectionViewController id="y7W-FJ-AYp" sceneMemberID="viewController">
+                <collectionViewController id="y7W-FJ-AYp" customClass="PurchasesCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="RLs-wX-19y">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="68w-pZ-jSk">
@@ -95,15 +95,16 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PurchaseCollectionCell" id="6Xh-DW-wbQ">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PurchaseCollectionCell" id="6Xh-DW-wbQ" customClass="PurchaseCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rlh-ue-y38">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CUE-U3-Cbj">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             </variation>
@@ -114,18 +115,20 @@
                                 <size key="customSize" width="100" height="100"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Rlh-ue-y38"/>
+                                        <exclude reference="CUE-U3-Cbj"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="Rlh-ue-y38"/>
+                                        <include reference="CUE-U3-Cbj"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="purchaseImageView" destination="CUE-U3-Cbj" id="GLO-0O-XaO"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="y7W-FJ-AYp" id="mvc-pY-TtH"/>
                             <outlet property="delegate" destination="y7W-FJ-AYp" id="f7P-cR-49G"/>
                         </connections>
                     </collectionView>

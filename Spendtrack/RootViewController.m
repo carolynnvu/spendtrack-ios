@@ -14,11 +14,14 @@
 
 @implementation RootViewController
 
+-(void)initPurchaseArray {
+    _purchases = [[NSMutableArray alloc] init];
+}
+
 -(void)addPurchase: (Purchase*)purchase {
     [_purchases addObject:purchase];
 }
     
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

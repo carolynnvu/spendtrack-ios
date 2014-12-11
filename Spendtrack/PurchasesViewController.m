@@ -22,9 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     _root = (RootViewController*) [self tabBarController];
-    _root.purchases = [[NSMutableArray alloc] init];
+    [_root initPurchaseArray];
     
     Purchase *purchase = [Purchase createPurchaseWithName:@"Tacos"
                                                  andPrice:35.95
@@ -37,6 +36,8 @@
                                                   andPhoto:@"creme_brelee"
                                                andCategory:@"Low"];
     [_root addPurchase:purchase1];
+    
+    NSLog(@"Just added tacos and shoes %lu", [_root.purchases count]);
 
     
     // Uncomment the following line to preserve selection between presentations.

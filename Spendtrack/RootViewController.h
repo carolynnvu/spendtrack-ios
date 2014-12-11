@@ -13,6 +13,7 @@
 
 @property NSMutableArray *purchases;
 
+-(void)initPurchaseArray;
 -(void)addPurchase: (Purchase*)purchase;
 
 @end
