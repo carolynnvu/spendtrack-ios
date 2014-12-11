@@ -44,10 +44,10 @@
 }
 
 - (IBAction)clickedAddPhoto:(id)sender {
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]){
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         [self presentViewController:picker animated:YES completion:nil];
     }
 }
