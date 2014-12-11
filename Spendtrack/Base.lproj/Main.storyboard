@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dP1-a1-GWa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dP1-a1-GWa">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -133,11 +133,18 @@
                             <outlet property="delegate" destination="y7W-FJ-AYp" id="f7P-cR-49G"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="4QX-pd-oES"/>
+                    <navigationItem key="navigationItem" id="4QX-pd-oES">
+                        <barButtonItem key="leftBarButtonItem" image="back24" style="plain" id="ULF-kK-Kh3">
+                            <connections>
+                                <segue destination="hei-C2-hDx" kind="unwind" unwindAction="unwindFromCollectionView:" id="0iW-ve-MOj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KB3-eT-ycg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hei-C2-hDx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3334.5" y="-654"/>
+            <point key="canvasLocation" x="2439" y="72"/>
         </scene>
         <!--Add-->
         <scene sceneID="WNQ-KC-e9O">
@@ -354,6 +361,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back24" width="24" height="24"/>
         <image name="gallery32" width="32" height="32"/>
         <image name="list24" width="24" height="24"/>
         <image name="plus24" width="24" height="24"/>

@@ -108,13 +108,10 @@
     // Pass the selected object to the new view controller.
     
     if([segue.identifier isEqualToString:@"TableSegueToCollection"]) {
-//        NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
         UINavigationController *navController = [segue destinationViewController];
-//        PurchasesCollectionViewController *destinationVC = segue.destinationViewController;
         PurchasesCollectionViewController *purchasesCollectionVC = (PurchasesCollectionViewController *)([navController viewControllers][0]);
         
         [purchasesCollectionVC setRoot:self.root];
-        //send stuff
     }
     
 }
