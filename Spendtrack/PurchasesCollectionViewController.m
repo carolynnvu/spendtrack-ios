@@ -77,7 +77,7 @@
     PurchaseCollectionViewCell *cell = (PurchaseCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"PurchaseCollectionCell" forIndexPath:indexPath];
     
     Purchase *purchase = (_root.purchases)[indexPath.row];
-    cell.purchaseImageView.image = [UIImage imageNamed:@"angry_birds_cake"];
+    cell.purchaseImageView.image = purchase.photo;
     
     
     // Configure the cell
