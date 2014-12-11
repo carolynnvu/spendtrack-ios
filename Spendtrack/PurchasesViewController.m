@@ -8,8 +8,10 @@
 
 #import "PurchasesViewController.h"
 #import "Purchase.h"
+#import "PurchasesCollectionViewController.h"
 #import "PurchaseTableViewCell.h"
 #import "RootViewController.h"
+
 
 @interface PurchasesViewController ()
 
@@ -112,14 +114,25 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+//Segue method to go to PurchasesCollectionViewController
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"TableSegueToCollection"]) {
+//        NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+        UINavigationController *navController = [segue destinationViewController];
+//        PurchasesCollectionViewController *destinationVC = segue.destinationViewController;
+        PurchasesCollectionViewController *purchasesCollectionVC = (PurchasesCollectionViewController *)([navController viewControllers][0]);
+        
+        [purchasesCollectionVC setRoot:self.root];
+        //send stuff
+    }
+    
 }
-*/
+
 
 @end

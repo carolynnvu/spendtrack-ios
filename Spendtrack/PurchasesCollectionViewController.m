@@ -13,8 +13,6 @@
 
 @interface PurchasesCollectionViewController ()
 
-@property (strong, nonatomic) RootViewController *root;
-
 @end
 
 @implementation PurchasesCollectionViewController
