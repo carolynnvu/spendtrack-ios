@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.categoryArray=@[@"Food", @"Shelter", @"Utilities", @"Transportation", @"Medical", @"Household", @"Personal", @"Education", @"General", @"Other"];
+    self.categoryArray=@[@"Clothes", @"Education", @"Food", @"General", @"Household", @"Medical", @"Other", @"Personal", @"Shelter", @"Transportation", @"Utilities"];
 }
 
 - (void)didReceiveMemoryWarning {

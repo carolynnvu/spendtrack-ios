@@ -58,12 +58,21 @@
     
     Purchase *purchase = (_root.purchases)[indexPath.row];
     cell.nameLabel.text = purchase.name;
-    cell.priceLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%.2f", purchase.price]; //Note...label should be changed to price.
     cell.purchaseImageView.image = purchase.photo; //[UIImage imageNamed:purchase.photo];
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Purchase *purchase = (_root.purchases)[indexPath.row];
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:purchase.name
+                                 message:[NSString stringWithFormat:@"Category: %@\nPrice: $%.2f ", purchase.category, purchase.price]
+                                 delegate:nil cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+    [messageAlert show];
+}
 
 /*
 // Override to support conditional editing of the table view.

@@ -61,7 +61,7 @@
     _root = (RootViewController*) [self tabBarController];
     _root.purchases = [[NSMutableArray alloc] init];
     _addImage = [UIImage imageNamed : @"full_breakfast"];
-    _addCat = @"Low";
+    _addCat = @"Others";
 }
 
 -(void)viewDidAppear {
