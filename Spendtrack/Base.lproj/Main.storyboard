@@ -153,21 +153,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="146" y="151" width="97" height="30"/>
+                                    <rect key="frame" x="107" y="151" width="175" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="textFieldDoneEditing:" destination="EqE-8P-7Qb" eventType="editingDidEndOnExit" id="TnR-Jv-rly"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qG9-sy-IvB">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="146" y="211" width="97" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="textFieldDoneEditing:" destination="EqE-8P-7Qb" eventType="editingDidEndOnExit" id="y9R-DV-je7"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Purchase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwA-50-HDB">
@@ -249,12 +238,22 @@
                                     <action selector="clickedAddItem:" destination="EqE-8P-7Qb" eventType="touchUpInside" id="bfu-e7-kr9"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVJ-me-aq4">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="107" y="211" width="175" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="EqE-8P-7Qb" eventType="editingDidEndOnExit" id="X4T-Nl-e02"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="cqG-yM-k4C"/>
-                                <exclude reference="qG9-sy-IvB"/>
                                 <exclude reference="NwA-50-HDB"/>
                                 <exclude reference="30F-pQ-5zW"/>
                                 <exclude reference="eDT-0O-US8"/>
@@ -263,12 +262,12 @@
                                 <exclude reference="kok-NP-LYD"/>
                                 <exclude reference="nGC-s2-Ol8"/>
                                 <exclude reference="M3h-dh-CEz"/>
+                                <exclude reference="iVJ-me-aq4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="cqG-yM-k4C"/>
-                                <include reference="qG9-sy-IvB"/>
                                 <include reference="NwA-50-HDB"/>
                                 <include reference="30F-pQ-5zW"/>
                                 <include reference="eDT-0O-US8"/>
@@ -277,6 +276,7 @@
                                 <include reference="kok-NP-LYD"/>
                                 <include reference="nGC-s2-Ol8"/>
                                 <include reference="M3h-dh-CEz"/>
+                                <include reference="iVJ-me-aq4"/>
                             </mask>
                         </variation>
                     </view>
@@ -285,7 +285,6 @@
                         <outlet property="addItem" destination="M3h-dh-CEz" id="xLz-u2-LQh"/>
                         <outlet property="addName" destination="cqG-yM-k4C" id="9hg-lO-gZj"/>
                         <outlet property="addPhoto" destination="nGC-s2-Ol8" id="IfY-xS-hVG"/>
-                        <outlet property="addPrice" destination="qG9-sy-IvB" id="P0e-0P-bPb"/>
                         <outlet property="categoryPicker" destination="kok-NP-LYD" id="bta-3l-5QB"/>
                     </connections>
                 </viewController>
