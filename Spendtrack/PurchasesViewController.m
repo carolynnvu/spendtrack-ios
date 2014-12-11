@@ -27,21 +27,6 @@
     _root = (RootViewController*) [self tabBarController];
     [_root initPurchaseArray];
     
-    Purchase *purchase = [Purchase createPurchaseWithName:@"Tacos"
-                                                 andPrice:35.95
-                                                 andPhoto:[UIImage imageNamed: @"full_breakfast"]
-                                              andCategory:@"High"];
-    [_root addPurchase:purchase];
-    
-    Purchase *purchase1 = [Purchase createPurchaseWithName:@"Shoes"
-                                                  andPrice:17.99
-                                                  andPhoto:[UIImage imageNamed:@"creme_brelee"]
-                                               andCategory:@"Low"];
-    [_root addPurchase:purchase1];
-    
-    NSLog(@"Just added tacos and shoes %lu", [_root.purchases count]);
-
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

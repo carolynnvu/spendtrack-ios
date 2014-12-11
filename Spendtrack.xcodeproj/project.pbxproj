@@ -448,6 +448,7 @@
 				7DAE8F631A38E0A00071EB83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DAE8F641A38E0A00071EB83 /* Build configuration list for PBXNativeTarget "SpendtrackTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +457,7 @@
 				7DAE8F661A38E0A00071EB83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
