@@ -11,7 +11,7 @@
 
 @interface Purchase : NSObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *name, *notes;
 @property (nonatomic) double price;
 @property (nonatomic) UIImage *photo; //really the path of the image
 @property (nonatomic, copy) NSString *category;
@@ -20,11 +20,13 @@
 -(Purchase*) initWithName:(NSString*)name
                  andPrice:(double)price
                  andPhoto:(UIImage*)photo
-              andCategory:(NSString*)category;
+              andCategory:(NSString*)category
+                 andNotes:(NSString*)notes;
 
 +(Purchase*) createPurchaseWithName:(NSString*)name
                            andPrice:(double)price
                            andPhoto:(UIImage*)photo
-                        andCategory:(NSString*)category;
+                        andCategory:(NSString*)category
+                           andNotes:(NSString*)notes;
 
 @end

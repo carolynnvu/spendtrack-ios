@@ -68,10 +68,19 @@
     Purchase *purchase = (_root.purchases)[indexPath.row];
     UIAlertView *messageAlert = [[UIAlertView alloc]
                                  initWithTitle:purchase.name
-                                 message:[NSString stringWithFormat:@"Category: %@\nPrice: $%.2f ", purchase.category, purchase.price]
+                                 message:[NSString stringWithFormat:@"Category: %@\nPrice: $%.2f\nNotes: %@ ", purchase.category, purchase.price, purchase.notes]
                                  delegate:nil cancelButtonTitle:@"OK"
                                  otherButtonTitles:nil];
     [messageAlert show];
+}
+
+// Swipe to delete
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_root.purchases removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 /*

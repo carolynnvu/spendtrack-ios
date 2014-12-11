@@ -18,6 +18,8 @@
 @property NSString *addCat;
 @property UIImage *addImage;
 @property (weak, nonatomic) IBOutlet UIPickerView *categoryPicker;
+@property (weak, nonatomic) IBOutlet UITextView *addNotes;
+
 @property (weak, nonatomic) IBOutlet UIButton *addItem;
 
 @end
@@ -28,8 +30,15 @@
     Purchase *purchase = [Purchase createPurchaseWithName:_addName.text
                                                  andPrice:[_addPrice.text doubleValue]
                                                  andPhoto:_addImage
-                                              andCategory:_addCat];
+                                              andCategory:_addCat
+                                                 andNotes:_addNotes.text];
     [_root addPurchase:purchase];
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Add Purchase"
+                                 message:[NSString stringWithFormat: @"Added %@", purchase.name]
+                                 delegate:nil cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+    [messageAlert show];
     NSLog(@"Just added %lu", [_root.purchases count]);
     
 }
