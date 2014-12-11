@@ -13,12 +13,18 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) double price;
+@property (nonatomic, copy) NSString *photo; //really the path of the image
+@property (nonatomic, copy) NSString *category;
+
 
 -(Purchase*) initWithName:(NSString*)name
-             andPrice:(double)price;
+                 andPrice:(double)price
+                 andPhoto:(NSString*)photo
+              andCategory:(NSString*)category;
 
 +(Purchase*) createPurchaseWithName:(NSString*)name
-                      andPrice:(double)price;
-
+                           andPrice:(double)price
+                           andPhoto:(NSString*)photo
+                        andCategory:(NSString*)category;
 
 @end

@@ -18,7 +18,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wCg-s4-ko1" id="Uo4-6I-fT2">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f55-Np-VFb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f55-Np-VFb">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -59,8 +59,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryLabel" destination="f55-Np-VFb" id="Dxj-fB-rMV"/>
                                     <outlet property="nameLabel" destination="V7t-27-yRn" id="JC5-HA-Pf9"/>
+                                    <outlet property="priceLabel" destination="f55-Np-VFb" id="mHv-uR-piq"/>
                                     <outlet property="purchaseImageView" destination="kvl-Zy-blD" id="rXt-Gg-MrF"/>
                                 </connections>
                             </tableViewCell>
@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="457" y="501"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root View Controller-->
         <scene sceneID="Uu4-RA-MGu">
             <objects>
-                <tabBarController id="dP1-a1-GWa" sceneMemberID="viewController">
+                <tabBarController id="dP1-a1-GWa" customClass="RootViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ehk-Wr-04u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

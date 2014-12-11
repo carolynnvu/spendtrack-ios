@@ -9,8 +9,11 @@
 #import "PurchasesViewController.h"
 #import "Purchase.h"
 #import "PurchaseTableViewCell.h"
+#import "RootViewController.h"
 
 @interface PurchasesViewController ()
+
+@property (strong, nonatomic) RootViewController *root;
 
 @end
 
@@ -18,6 +21,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    _root = (RootViewController*) [self tabBarController];
+    _root.purchases = [[NSMutableArray alloc] init];
+    
+    Purchase *purchase = [Purchase createPurchaseWithName:@"Tacos"
+                                                 andPrice:35.95
+                                                 andPhoto:@"full_breakfast"
+                                              andCategory:@"High"];
+    [_root.purchases addObject:purchase];
+    
+    Purchase *purchase1 = [Purchase createPurchaseWithName:@"Shoes"
+                                                  andPrice:17.99
+                                                  andPhoto:@"creme_brelee"
+                                               andCategory:@"Low"];
+    [_root.purchases addObject:purchase1];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,11 +51,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(UIImage*)imageForPurchase:(int)purchase {
-    //Mock photos for now.
-    return [UIImage imageNamed:@"angry_birds_cake"];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -45,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.purchases count];
+    return [_root.purchases count];
 }
 
 
@@ -53,10 +68,10 @@
     
     PurchaseTableViewCell *cell = (PurchaseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PurchaseCell"];
     
-    Purchase *purchase = (self.purchases)[indexPath.row];
+    Purchase *purchase = (_root.purchases)[indexPath.row];
     cell.nameLabel.text = purchase.name;
-    cell.categoryLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
-    cell.purchaseImageView.image = [UIImage imageNamed:@"creme_brelee"];
+    cell.priceLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
+    cell.purchaseImageView.image = [UIImage imageNamed:purchase.photo];
     
     return cell;
 }

@@ -11,21 +11,28 @@
 @implementation Purchase
 
 -(Purchase*) initWithName:(NSString*)name
-              andPrice:(double)price {
+                 andPrice:(double)price
+                 andPhoto:(NSString*)photo
+              andCategory:(NSString*)category {
     
     if(self=[super init]) {
         _name = name;
         _price = price;
-
+        _photo = photo;
+        _category = category;
     }
     return self;
 }
 
 +(Purchase*) createPurchaseWithName: (NSString*)name
-                andPrice:(double)price {
+                andPrice:(double)price
+                andPhoto:(NSString*)photo
+                andCategory:(NSString *)category{
     
     Purchase* entry = [[Purchase alloc] initWithName:name
-                                            andPrice:price];
+                                            andPrice:price
+                                            andPhoto:photo
+                                         andCategory:category];
     return entry;
 }
 
