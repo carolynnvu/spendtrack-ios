@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7204AC6C-8500-4655-91BC-E10F8EDFAF2C</string>
+	<string>D6A1441F-82FD-4B52-97D3-5CAE51CE95BB</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Spendtrack</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>58BFCC2F390118971B2D823AB999D0C10B5CC83F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Spendtrack</string>
+			<string>spendtrack-ios</string>
 		</dict>
 	</array>
 </dict>
