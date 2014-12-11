@@ -12,7 +12,7 @@
 
 -(Purchase*) initWithName:(NSString*)name
                  andPrice:(double)price
-                 andPhoto:(NSString*)photo
+                 andPhoto:(UIImage*)photo
               andCategory:(NSString*)category {
     
     if(self=[super init]) {
