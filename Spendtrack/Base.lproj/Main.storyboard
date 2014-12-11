@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Purchases" id="eOq-kw-QnO">
                         <barButtonItem key="rightBarButtonItem" image="gallery32" style="plain" id="omJ-24-7pU">
                             <connections>
-                                <segue destination="R1L-Rq-k2A" kind="presentation" id="HZo-1a-FB0"/>
+                                <segue destination="R1L-Rq-k2A" kind="presentation" identifier="TableSegueToCollection" id="HZo-1a-FB0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
