@@ -8,6 +8,7 @@
 
 #import "PurchasesViewController.h"
 #import "Purchase.h"
+#import "PurchaseTableViewCell.h"
 
 @interface PurchasesViewController ()
 
@@ -30,6 +31,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(UIImage*)imageForPurchase:(int)purchase {
+    //Mock photos for now.
+    return [UIImage imageNamed:@"angry_birds_cake"];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -45,11 +51,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PurchaseCell"];
+    PurchaseTableViewCell *cell = (PurchaseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PurchaseCell"];
     
     Purchase *purchase = (self.purchases)[indexPath.row];
-    cell.textLabel.text = purchase.name;
-    cell.detailTextLabel.text = purchase.category;
+    cell.nameLabel.text = purchase.name;
+    cell.categoryLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
+    cell.purchaseImageView.image = [UIImage imageNamed:@"creme_brelee"];
     
     return cell;
 }

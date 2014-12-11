@@ -24,10 +24,11 @@
     // Override point for customization after application launch.
     _purchases = [NSMutableArray arrayWithCapacity:20];
     
-    Purchase *purchase = [[Purchase alloc] init];
-    purchase.name = @"Bill Evans";
-    purchase.category = @"Tic-Tac-Toe";
+    Purchase *purchase = [Purchase createPurchaseWithName:@"Tacos" andPrice:35.95];
     [_purchases addObject:purchase];
+    
+    Purchase *purchase1 = [Purchase createPurchaseWithName:@"Shoes" andPrice:17.99];
+    [_purchases addObject:purchase1];
     
     UITabBarController *tabBarController =  (UITabBarController *)self.window.rootViewController;
     UINavigationController *navigationController = [tabBarController viewControllers][0];
