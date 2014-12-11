@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "PurchasesCollectionViewController.h"
 
 @interface RootViewController ()
 
@@ -32,6 +33,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)unwindFromCollectionView:(UIStoryboardSegue *)segue {
+    NSLog(@"%@", segue.identifier);
+    PurchasesCollectionViewController *purchasesCollectionVC = segue.sourceViewController;
+    //    _root.purchases = purchasesCollectionVC.root.purchases;
 }
 
 /*

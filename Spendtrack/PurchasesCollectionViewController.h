@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
 @interface PurchasesCollectionViewController : UICollectionViewController
+
+@property (strong, nonatomic) RootViewController *root;
 
 @end
