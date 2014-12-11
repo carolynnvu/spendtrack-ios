@@ -26,7 +26,7 @@
 
 +(Purchase*) createPurchaseWithName: (NSString*)name
                 andPrice:(double)price
-                andPhoto:(NSString*)photo
+                andPhoto:(UIImage*)photo
                 andCategory:(NSString *)category{
     
     Purchase* entry = [[Purchase alloc] initWithName:name
