@@ -27,13 +27,13 @@
     
     Purchase *purchase = [Purchase createPurchaseWithName:@"Tacos"
                                                  andPrice:35.95
-                                                 andPhoto:@"full_breakfast"
+                                                 andPhoto:[UIImage imageWithContentsOfFile: @"full_breakfast"]
                                               andCategory:@"High"];
     [_root addPurchase:purchase];
     
     Purchase *purchase1 = [Purchase createPurchaseWithName:@"Shoes"
                                                   andPrice:17.99
-                                                  andPhoto:@"creme_brelee"
+                                                  andPhoto:[UIImage imageWithContentsOfFile:@"creme_brelee"]
                                                andCategory:@"Low"];
     [_root addPurchase:purchase1];
     
@@ -72,7 +72,7 @@
     Purchase *purchase = (_root.purchases)[indexPath.row];
     cell.nameLabel.text = purchase.name;
     cell.priceLabel.text = @(purchase.price).stringValue; //Note...label should be changed to price.
-    cell.purchaseImageView.image = [UIImage imageNamed:purchase.photo];
+    cell.purchaseImageView.image = purchase.photo; //[UIImage imageNamed:purchase.photo];
     
     return cell;
 }

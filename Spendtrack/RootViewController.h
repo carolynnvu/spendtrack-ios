@@ -11,6 +11,8 @@
 
 @interface RootViewController : UITabBarController
 
+@property NSArray *categoryArray;
+
 @property NSMutableArray *purchases;
 
 -(void)initPurchaseArray;
