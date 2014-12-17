@@ -158,7 +158,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cqG-yM-k4C">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cqG-yM-k4C">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -169,7 +169,7 @@
                                     <action selector="textFieldDoneEditing:" destination="EqE-8P-7Qb" eventType="editingDidEndOnExit" id="TnR-Jv-rly"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVJ-me-aq4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iVJ-me-aq4">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -222,7 +222,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="143" y="261" width="114" height="30"/>
+                                    <rect key="frame" x="143" y="256" width="114" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="clickedAddPhoto:" destination="EqE-8P-7Qb" eventType="touchUpInside" id="RHN-28-nEr"/>
@@ -234,7 +234,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="169" y="540" width="63" height="30"/>
+                                    <rect key="frame" x="169" y="567" width="63" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="clickedAddItem:" destination="EqE-8P-7Qb" eventType="touchUpInside" id="bfu-e7-kr9"/>
@@ -246,7 +246,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="292" width="46" height="21"/>
+                                    <rect key="frame" x="177" y="333" width="46" height="21"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-5q-bJe">
@@ -255,13 +255,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="68" y="316" width="264" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWb-eJ-pFS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyt-7q-gPd">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="76" y="362" width="248" height="60"/>
+                                </variation>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uU8-oU-kIG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="150" y="282" width="100" height="50"/>
+                                </variation>
+                            </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kok-NP-LYD">
                                 <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="382" width="400" height="162"/>
+                                    <rect key="frame" x="0.0" y="410" width="400" height="162"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="EqE-8P-7Qb" id="UQD-Sb-eat"/>
@@ -282,6 +306,9 @@
                                 <exclude reference="M3h-dh-CEz"/>
                                 <exclude reference="wJK-jM-LTZ"/>
                                 <exclude reference="vgp-5q-bJe"/>
+                                <exclude reference="hWb-eJ-pFS"/>
+                                <exclude reference="hyt-7q-gPd"/>
+                                <exclude reference="uU8-oU-kIG"/>
                                 <exclude reference="kok-NP-LYD"/>
                             </mask>
                         </variation>
@@ -297,6 +324,9 @@
                                 <include reference="M3h-dh-CEz"/>
                                 <include reference="wJK-jM-LTZ"/>
                                 <include reference="vgp-5q-bJe"/>
+                                <include reference="hWb-eJ-pFS"/>
+                                <include reference="hyt-7q-gPd"/>
+                                <include reference="uU8-oU-kIG"/>
                                 <include reference="kok-NP-LYD"/>
                             </mask>
                         </variation>
@@ -305,10 +335,11 @@
                     <connections>
                         <outlet property="addItem" destination="M3h-dh-CEz" id="xLz-u2-LQh"/>
                         <outlet property="addName" destination="cqG-yM-k4C" id="9hg-lO-gZj"/>
-                        <outlet property="addNotes" destination="vgp-5q-bJe" id="xYt-CA-nVx"/>
+                        <outlet property="addNotes" destination="hyt-7q-gPd" id="PNU-OO-k5U"/>
                         <outlet property="addPhoto" destination="nGC-s2-Ol8" id="IfY-xS-hVG"/>
                         <outlet property="addPrice" destination="iVJ-me-aq4" id="AAa-13-abP"/>
                         <outlet property="categoryPicker" destination="kok-NP-LYD" id="bta-3l-5QB"/>
+                        <outlet property="photoBox" destination="uU8-oU-kIG" id="Kkf-FU-lga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="899-XO-BIf" userLabel="First Responder" sceneMemberID="firstResponder"/>

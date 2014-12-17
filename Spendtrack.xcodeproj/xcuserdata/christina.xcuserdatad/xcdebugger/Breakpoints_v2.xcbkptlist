@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spendtrack/AddViewController.h"
-            timestampString = "439993638.071884"
+            timestampString = "440026415.303761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
             landmarkName = "@interface AddViewController"
             landmarkType = "2">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spendtrack/AddViewController.m"
-            timestampString = "440021729.805801"
+            timestampString = "440545264.037535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-textFieldDoneEditing:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spendtrack/AddViewController.m"
-            timestampString = "440021729.805801"
+            timestampString = "440545264.037535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-backTap:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Spendtrack/AddViewController.m"
-            timestampString = "440021729.805801"
+            timestampString = "440544720.234782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-clickedAddItem:"
             landmarkType = "5">
          </BreakpointContent>

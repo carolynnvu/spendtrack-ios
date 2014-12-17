@@ -2,7 +2,6 @@
 //  AddViewController.m
 //  Spendtrack
 //
-//  Created by Carolynn Vu on 12/10/14.
 //  Copyright (c) 2014 Carolynn Vu and Christina Chan. All rights reserved.
 //
 
@@ -19,6 +18,9 @@
 @property UIImage *addImage;
 @property (weak, nonatomic) IBOutlet UIPickerView *categoryPicker;
 @property (weak, nonatomic) IBOutlet UITextView *addNotes;
+@property (weak, nonatomic) IBOutlet UIImageView *photoBox;
+
+
 
 @property (weak, nonatomic) IBOutlet UIButton *addItem;
 
@@ -40,6 +42,11 @@
                                  otherButtonTitles:nil];
     [messageAlert show];
     NSLog(@"Just added %lu", [_root.purchases count]);
+    // Clears fields for new item
+    self.addName.text = @"";
+    self.addPrice.text = @"";
+    self.photoBox.image = nil;
+    self.addNotes.text = @"";
     
 }
 
@@ -58,25 +65,22 @@
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *selectedImage = (UIImage*)[info objectForKey: UIImagePickerControllerOriginalImage];
-    _addImage = selectedImage;
+    self.addImage = selectedImage;
+    self.photoBox.image = selectedImage;
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 -(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //Don't re-init RootViewController here.
+    // Don't re-init RootViewController here.
     
     _root = (RootViewController*) [self tabBarController];
     _root.purchases = [[NSMutableArray alloc] init];
     _addImage = [UIImage imageNamed : @"full_breakfast"];
-    _addCat = @"Others";
+    _addCat = @"Others"; // Default category is others
 }
-
--(void)viewDidAppear {
-}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

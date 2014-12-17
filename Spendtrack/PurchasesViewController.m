@@ -2,7 +2,6 @@
 //  PurchasesViewController.m
 //  Spendtrack
 //
-//  Created by Carolynn Vu on 12/10/14.
 //  Copyright (c) 2014 Carolynn Vu and Christina Chan. All rights reserved.
 //
 
@@ -64,14 +63,21 @@
     return cell;
 }
 
+// Tap on table cell to see alert about purchase
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Purchase *purchase = (_root.purchases)[indexPath.row];
-    UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:purchase.name
-                                 message:[NSString stringWithFormat:@"Category: %@\nPrice: $%.2f\nNotes: %@ ", purchase.category, purchase.price, purchase.notes]
+    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Purchase Info"
+                                 message:[NSString stringWithFormat:@"Name: %@\nCategory: %@\nPrice: $%.2f\nNotes: %@ ", purchase.name, purchase.category, purchase.price, purchase.notes]
                                  delegate:nil cancelButtonTitle:@"OK"
-                                 otherButtonTitles:nil];
+                                 otherButtonTitles:@"Edit", nil];
     [messageAlert show];
+}
+
+// Edit option
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (([alertView.title isEqualToString:@"Purchase Info"])&&(buttonIndex==1)) {
+        NSLog(@"Hi");
+    }
 }
 
 // Swipe to delete
