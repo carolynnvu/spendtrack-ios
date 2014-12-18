@@ -19,14 +19,23 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *categoryPicker;
 @property (weak, nonatomic) IBOutlet UITextView *addNotes;
 @property (weak, nonatomic) IBOutlet UIImageView *photoBox;
-
-
-
 @property (weak, nonatomic) IBOutlet UIButton *addItem;
+@property (weak, nonatomic) IBOutlet UIButton *catAction;
 
 @end
 
 @implementation AddViewController
+- (IBAction)clickedCatAction:(id)sender {
+
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Pick A Category"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:@"Delete it"
+                                                    otherButtonTitles:@"Copy", @"Move", @"Duplicate", nil];
+    [actionSheet showInView:self.view];
+
+    
+}
 
 - (IBAction)clickedAddItem:(id)sender {
     Purchase *purchase = [Purchase createPurchaseWithName:_addName.text

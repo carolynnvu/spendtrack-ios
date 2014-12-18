@@ -8,5 +8,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddViewController : UIViewController
-<UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+<UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate>
 @end

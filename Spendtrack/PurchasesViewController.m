@@ -10,12 +10,14 @@
 #import "PurchasesCollectionViewController.h"
 #import "PurchaseTableViewCell.h"
 #import "RootViewController.h"
+#import "AddViewController.h"
+#import "EditViewController.h"
 
 
 @interface PurchasesViewController ()
 
 @property (strong, nonatomic) RootViewController *root;
-
+@property NSInteger editItemLoc;
 @end
 
 @implementation PurchasesViewController
@@ -25,6 +27,7 @@
     
     _root = (RootViewController*) [self tabBarController];
     [_root initPurchaseArray];
+    _editItemLoc = 0;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -66,18 +69,25 @@
 // Tap on table cell to see alert about purchase
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Purchase *purchase = (_root.purchases)[indexPath.row];
-    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Purchase Info"
-                                 message:[NSString stringWithFormat:@"Name: %@\nCategory: %@\nPrice: $%.2f\nNotes: %@ ", purchase.name, purchase.category, purchase.price, purchase.notes]
-                                 delegate:nil cancelButtonTitle:@"OK"
-                                 otherButtonTitles:@"Edit", nil];
-    [messageAlert show];
-}
-
-// Edit option
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (([alertView.title isEqualToString:@"Purchase Info"])&&(buttonIndex==1)) {
-        NSLog(@"Hi");
-    }
+    _editItemLoc = indexPath.row;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Purchase Info"
+                                                                             message:[NSString stringWithFormat:@"Name: %@\nCategory: %@\nPrice: $%.2f\nNotes: %@ ", purchase.name, purchase.category, purchase.price, purchase.notes]
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *editAction = [UIAlertAction actionWithTitle:@"Edit"
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           [self performSegueWithIdentifier:@"editItem" sender:self];
+                                                       }];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action){
+                                                         NSLog(@"OK");
+                                                     }];
+    [alert addAction:editAction];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // Swipe to delete
@@ -137,8 +147,18 @@
         
         [purchasesCollectionVC setRoot:self.root];
     }
-    
+    /*
+    if([segue.identifier isEqualToString:@"editItem"]){
+        EditViewController *edit = segue.destinationViewController;
+        edit.itemLoc = _editItemLoc;
+    }
+    */
 }
-
-
+/*
+// Return to list of purchases
+- (IBAction) backToList: (UIStoryboardSegue *) segue {
+    EditViewController *editVC = segue.sourceViewController;
+    _root.purchases = editVC.list;
+}
+*/
 @end
