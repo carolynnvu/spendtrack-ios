@@ -11,7 +11,6 @@
 #import "PurchaseTableViewCell.h"
 #import "RootViewController.h"
 #import "AddViewController.h"
-#import "EditViewController.h"
 
 
 @interface PurchasesViewController ()
@@ -147,18 +146,30 @@
         
         [purchasesCollectionVC setRoot:self.root];
     }
-    /*
+    
     if([segue.identifier isEqualToString:@"editItem"]){
-        EditViewController *edit = segue.destinationViewController;
-        edit.itemLoc = _editItemLoc;
+        NSLog(@"%@", [_root.purchases[_editItemLoc] name]);
+        AddViewController *edit = segue.destinationViewController;
+        Purchase *toedit = _root.purchases[_editItemLoc];
+        edit.edName = toedit.name;
+        edit.edPrice = toedit.price;
+        edit.edCatText = toedit.category;
+        edit.edPhotoBox = toedit.photo;
+        edit.edNotes = toedit.notes;
     }
-    */
+    
 }
-/*
-// Return to list of purchases
-- (IBAction) backToList: (UIStoryboardSegue *) segue {
-    EditViewController *editVC = segue.sourceViewController;
-    _root.purchases = editVC.list;
+
+- (IBAction)prepareToUnwind:(UIStoryboardSegue *) segue{
+    AddViewController *editVC = segue.sourceViewController;
+    Purchase *edited = _root.purchases[_editItemLoc];
+    edited.name = editVC.edName;
+    edited.price = editVC.edPrice;
+    edited.category = editVC.edCatText;
+    edited.photo = editVC.edPhotoBox;
+    edited.notes = editVC.edNotes;
+    
+    [self.tableView reloadData];
 }
-*/
+
 @end

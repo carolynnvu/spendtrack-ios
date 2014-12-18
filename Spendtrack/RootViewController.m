@@ -27,6 +27,11 @@
     // Do any additional setup after loading the view.
     
     self.categoryArray=@[@"Clothes", @"Education", @"Food", @"General", @"Household", @"Medical", @"Other", @"Personal", @"Shelter", @"Transportation", @"Utilities"];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:12.0f/255.0f
+                                                           green:122.0f/255.0f
+                                                            blue:68.0f/255.0f
+                                                           alpha:1.0f]];
 }
 
 - (void)didReceiveMemoryWarning {
