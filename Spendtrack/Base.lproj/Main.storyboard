@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RpV-H9-PrW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rea-vX-YsH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -80,7 +80,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhF-oj-d2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1563" y="-654"/>
+            <point key="canvasLocation" x="1563" y="-621"/>
         </scene>
         <!--Purchases Collection View Controller-->
         <scene sceneID="nRc-Uq-lKA">
@@ -144,7 +144,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KB3-eT-ycg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hei-C2-hDx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="72"/>
+            <point key="canvasLocation" x="2439" y="96"/>
         </scene>
         <!--Add-->
         <scene sceneID="WNQ-KC-e9O">
@@ -344,7 +344,92 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="899-XO-BIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456" y="501"/>
+            <point key="canvasLocation" x="495" y="96"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Arl-nN-fsJ">
+            <objects>
+                <viewController id="rea-vX-YsH" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyR-8L-4sw"/>
+                        <viewControllerLayoutGuide type="bottom" id="yfB-52-wIY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Vs-gx-pRr">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w98-JN-2H3">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="117" y="176" width="167" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3A1-6M-ecw">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="117" y="241" width="167" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7I-9N-buW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="294" width="133" height="45"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loginPressed:" destination="rea-vX-YsH" eventType="touchUpInside" id="gCu-Mk-ZHb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDN-Nz-RBa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Signup">
+                                    <color key="titleColor" red="0.80000000000000004" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="347" width="133" height="45"/>
+                                </variation>
+                                <connections>
+                                    <action selector="signupPressed:" destination="rea-vX-YsH" eventType="touchUpInside" id="HUF-aN-eCG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="w98-JN-2H3"/>
+                                <exclude reference="3A1-6M-ecw"/>
+                                <exclude reference="L7I-9N-buW"/>
+                                <exclude reference="SDN-Nz-RBa"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="w98-JN-2H3"/>
+                                <include reference="3A1-6M-ecw"/>
+                                <include reference="L7I-9N-buW"/>
+                                <include reference="SDN-Nz-RBa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ky6-gB-tPn"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="3A1-6M-ecw" id="HxB-W2-uDK"/>
+                        <outlet property="usernameTextField" destination="w98-JN-2H3" id="IKq-0q-oMp"/>
+                        <segue destination="xIx-Mw-sOy" kind="presentation" identifier="loginSegueToSignup" id="InC-Jf-j21"/>
+                        <segue destination="dP1-a1-GWa" kind="presentation" id="2fw-Ag-f7Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SrU-TP-QEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1324.5" y="175.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Uu4-RA-MGu">
@@ -363,74 +448,84 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9x-XF-AqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-363" y="169"/>
+            <point key="canvasLocation" x="-363" y="-206.25"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="i0Q-TM-BaN">
+        <!--Signup View Controller-->
+        <scene sceneID="NAs-ha-RGb">
             <objects>
-                <viewController id="RpV-H9-PrW" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="xIx-Mw-sOy" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xzn-pD-iEg"/>
-                        <viewControllerLayoutGuide type="bottom" id="IfJ-6I-cmI"/>
+                        <viewControllerLayoutGuide type="top" id="O1V-1B-Ix2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Efg-9p-sEk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zpt-B8-Ddb">
+                    <view key="view" contentMode="scaleToFill" id="w3U-wn-rBr">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-jN-e8n">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52B-iL-uLZ">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="108" y="198" width="185" height="30"/>
+                                    <rect key="frame" x="121" y="111" width="185" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-nM-4Uh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCw-Z7-7Ph">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="108" y="260" width="185" height="30"/>
+                                    <rect key="frame" x="121" y="179" width="185" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4H-1Q-lCs">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYP-tR-Wx9">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="121" y="246" width="185" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92Z-rU-AFH">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Login">
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Join">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="154" y="319" width="92" height="37"/>
+                                    <rect key="frame" x="133" y="305" width="135" height="43"/>
                                 </variation>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="RpV-H9-PrW" eventType="touchUpInside" id="Ego-2T-z9T"/>
+                                    <action selector="signupButtonPressed:" destination="xIx-Mw-sOy" eventType="touchUpInside" id="hb3-LL-eTU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="YGa-jN-e8n"/>
-                                <exclude reference="YLW-nM-4Uh"/>
-                                <exclude reference="P4H-1Q-lCs"/>
+                                <exclude reference="52B-iL-uLZ"/>
+                                <exclude reference="RCw-Z7-7Ph"/>
+                                <exclude reference="vYP-tR-Wx9"/>
+                                <exclude reference="92Z-rU-AFH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="YGa-jN-e8n"/>
-                                <include reference="YLW-nM-4Uh"/>
-                                <include reference="P4H-1Q-lCs"/>
+                                <include reference="52B-iL-uLZ"/>
+                                <include reference="RCw-Z7-7Ph"/>
+                                <include reference="vYP-tR-Wx9"/>
+                                <include reference="92Z-rU-AFH"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="passwordTextField" destination="YLW-nM-4Uh" id="dbE-xp-WGm"/>
-                        <outlet property="usernameTextField" destination="YGa-jN-e8n" id="d3r-kh-ZCd"/>
-                        <segue destination="dP1-a1-GWa" kind="presentation" id="oMU-ho-ZsP"/>
+                        <outlet property="emailTextField" destination="52B-iL-uLZ" id="NrD-nH-pd6"/>
+                        <outlet property="passwordTextField" destination="vYP-tR-Wx9" id="eBm-kJ-7CQ"/>
+                        <outlet property="usernameTextField" destination="RCw-Z7-7Ph" id="Tr1-su-kGJ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xeI-e6-0Pk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjP-9X-ZOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1266" y="168.75"/>
+            <point key="canvasLocation" x="-363" y="514.5"/>
         </scene>
         <!--View-->
         <scene sceneID="NJs-qi-Nb6">
@@ -449,7 +544,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5n6-b0-fM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="-223"/>
+            <point key="canvasLocation" x="495" y="-621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qF4-KP-Zo9">
@@ -467,7 +562,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvO-Y7-gTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="-654"/>
+            <point key="canvasLocation" x="2439" y="-621"/>
         </scene>
     </scenes>
     <resources>
