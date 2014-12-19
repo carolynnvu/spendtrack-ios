@@ -41,50 +41,40 @@
 }
 
 - (IBAction)loginPressed:(id)sender {
-    NSInteger success = 0;
-
     if([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
-        [self alertMssg:@"Invalid username or password!" :@"Failed to login." :0];
-    } else {
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/signup"]];
-        request.HTTPMethod = @"POST";
-        [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-                                                                            
-//        NSString *post = [[NSString alloc] initWithFormat:@"username=%@&password=%@", [self.usernameTextField text], [self.passwordTextField text]];
-//        
-//        NSURL *url = [NSURL URLWithString:@"http://localhost:3000/login"];
-//        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-//        NSString *postLength = [NSString stringWithFormat:@"lu", (unsigned long)[postData length]];
-//
-//        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-//        [request setURL:url];
-//        [request setHTTPMethod:@"POST"];
-//        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-//        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//        [request setHTTPBody:postData];
+        NSLog(@"Something something something");
+        [self alertMssg:@"Invalid entry!" :@"Failed to register." :0];
+    }
+    else {
+        NSString *usernameInput = [self.usernameTextField text];
+        NSString *passwordInput = [self.passwordTextField text];
+        //            [self performSegueWithIdentifier:@"unwindFromSignupViewController" sender:sender];
         
-//        NSError *error = [[NSError alloc] init];
-//        NSHTTPURLResponse *response = nil;
-//        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//        
-//        if([response statusCode] >= 200 && [response statusCode] < 400) {
-//            NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-//            NSLog(@"Response ==> %@", responseData);
-//            NSError *error = nil;
-//            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:urlData options:NSJSONReadingMutableContainers error:&error];
-//        
-//            success = [jsonData[@"success"] integerValue];
-//            if(success) {
-//                NSLog(@"Login successful");
-//            } else {
-//                NSString *error_mssg = (NSString*) jsonData[@"error_message"];
-//                [self alertMssg:error_mssg :@"Sign in failed."  :0];
-//            }
-//        }
-   }
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/login"]];
+        request.HTTPMethod = @"POST";
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        NSArray *keys = [NSArray arrayWithObjects:@"username", @"password", nil];
+        NSArray *objs = [NSArray arrayWithObjects:usernameInput, passwordInput, nil];
+        NSDictionary *dataDictionary = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
+        NSError *error = [[NSError alloc] init];
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataDictionary options:NSJSONWritingPrettyPrinted error:&error];
+        NSString *requestBodyData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; //For test-printing only.
+        NSLog(@"Data ---> %@", requestBodyData);
+        request.HTTPBody = jsonData;
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        NSHTTPURLResponse *response = nil;
+        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        
+        if([response statusCode] >= 200 && [response statusCode] < 400) {
+            NSLog(@"Success: user logged in!");
+            [self performSegueWithIdentifier:@"loginSegueToList" sender:self];
+        }
+    }
+
 }
+
 
 -(IBAction) unwindFromSignupViewController:(UIStoryboardSegue*) segue {
     

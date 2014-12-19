@@ -355,6 +355,7 @@
                         <viewControllerLayoutGuide type="bottom" id="yfB-52-wIY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Vs-gx-pRr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w98-JN-2H3">
@@ -424,7 +425,7 @@
                         <outlet property="passwordTextField" destination="3A1-6M-ecw" id="HxB-W2-uDK"/>
                         <outlet property="usernameTextField" destination="w98-JN-2H3" id="IKq-0q-oMp"/>
                         <segue destination="xIx-Mw-sOy" kind="presentation" identifier="loginSegueToSignup" id="InC-Jf-j21"/>
-                        <segue destination="dP1-a1-GWa" kind="presentation" id="2fw-Ag-f7Y"/>
+                        <segue destination="dP1-a1-GWa" kind="presentation" identifier="loginSegueToList" id="2fw-Ag-f7Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SrU-TP-QEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,6 +460,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Efg-9p-sEk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w3U-wn-rBr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52B-iL-uLZ">

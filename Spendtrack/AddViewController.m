@@ -29,6 +29,7 @@
 @implementation AddViewController
 
 - (IBAction)clickedAddItem:(id)sender {
+
     Purchase *purchase = [Purchase createPurchaseWithName:_addName.text
                                                  andPrice:[_addPrice.text doubleValue]
                                                  andPhoto:_addImage

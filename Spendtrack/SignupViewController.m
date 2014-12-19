@@ -35,10 +35,7 @@
 */
 
 - (IBAction)signupButtonPressed:(id)sender {
-    NSInteger success = 0;
-    
-    NSLog(@"Hello");
-    
+
     if([[self.emailTextField text] isEqualToString:@""] || [[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
         NSLog(@"Something something something");
         [self alertMssg:@"Invalid entry!" :@"Failed to register." :0];
@@ -52,7 +49,6 @@
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/signup"]];
             request.HTTPMethod = @"POST";
             [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//            NSString *data = [[NSString alloc] initWithFormat:@"email=%@&username=%@&password=%@", [self.emailTextField text],[self.usernameTextField text], [self.passwordTextField text]];
             
             NSArray *keys = [NSArray arrayWithObjects:@"email", @"username", @"password", nil];
             NSArray *objs = [NSArray arrayWithObjects:emailInput, usernameInput, passwordInput, nil];
@@ -68,7 +64,8 @@
             NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         
             if([response statusCode] >= 200 && [response statusCode] < 400) {
-                NSLog(@"SUCCESS");
+                NSLog(@"Success: added new user to database!");
+            
             }
     }
 }
