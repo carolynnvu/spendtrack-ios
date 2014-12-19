@@ -91,40 +91,24 @@
 
 // Add item to list of purchases
 - (IBAction)clickedAddItem:(id)sender {
-    
-    //Serialize UIImage
-    NSData *addedImageData = UIImagePNGRepresentation(_addImage);
-    NSString *base64StringOfImage = [addedImageData base64EncodedDataWithOptions:0];
-    
-    NSArray *keys = [NSArray arrayWithObjects:@"name", @"price", @"image", @"category", @"notes", nil];
-    NSArray *objs = [NSArray arrayWithObjects:_addName.text, _addPrice.text, base64StringOfImage, _addCatText.text, _addNotes.text, nil];
-    
-    BOOL request = [Utilities requestWithUrl:@"http://localhost:3000/add-item" andMethod:@"POST" andKeys:keys andObjs:objs];
-    
-    if(request) {
-        // Indicate item was added
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add Purchase"
-                                                                       message:[NSString stringWithFormat:@"Added %@", _addName.text]
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction *action){
-                                                             NSLog(@"OK");
-                                                         }];
-        [alert addAction:okAction];
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        NSLog(@"Just added %lu", [_root.purchases count]);
-        // Clears fields for new item
-        self.addName.text = @"";
-        self.addPrice.text = @"";
-        self.addCatText.text = @"";
-        self.photoBox.image = [UIImage imageNamed : @"full_breakfast"];
-        self.addNotes.text = @"";
-    } else {
-        NSLog(@"Failed to add item!");
-    }
-}
+    Purchase *purchase = [Purchase createPurchaseWithName:_addName.text
+                                                 andPrice:[_addPrice.text doubleValue]
+                                                 andPhoto:_addImage
+                                              andCategory:_addCat
+                                                 andNotes:_addNotes.text];
+    [_root addPurchase:purchase];
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Add Purchase"
+                                 message:[NSString stringWithFormat: @"Added %@", purchase.name]
+                                 delegate:nil cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+    [messageAlert show];
+    NSLog(@"Just added %lu", [_root.purchases count]);
+    // Clears fields for new item
+    self.addName.text = @"";
+    self.addPrice.text = @"";
+    self.photoBox.image = nil;
+    self.addNotes.text = @"";}
 
 // Add Image
 - (IBAction)clickedAddPhoto:(id)sender {
@@ -140,9 +124,10 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *selectedImage = (UIImage*)[info objectForKey: UIImagePickerControllerOriginalImage];
     self.addImage = selectedImage;
+    
     self.photoBox.image = selectedImage;
     self.editImage = selectedImage;
     self.editPhotoBox.image = selectedImage;
