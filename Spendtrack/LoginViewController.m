@@ -6,6 +6,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Utilities.h"
 
 @interface LoginViewController ()
 
@@ -31,37 +32,23 @@
 
 - (IBAction)loginButtonPressed:(id)sender {
     if([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
-        NSLog(@"Something something something");
         [self alertMssg:@"Try again!" :@"Invalid entry." :0];
     }
     else {
         NSString *usernameInput = [self.usernameTextField text];
         NSString *passwordInput = [self.passwordTextField text];
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/login"]];
-        request.HTTPMethod = @"POST";
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        
         NSArray *keys = [NSArray arrayWithObjects:@"username", @"password", nil];
         NSArray *objs = [NSArray arrayWithObjects:usernameInput, passwordInput, nil];
-        NSDictionary *dataDictionary = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
-        NSError *error = [[NSError alloc] init];
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataDictionary options:NSJSONWritingPrettyPrinted error:&error];
-        NSString *requestBodyData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; //For test-printing only.
-        request.HTTPBody = jsonData;
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         
-        NSHTTPURLResponse *response = nil;
-        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        BOOL request = [Utilities requestWithUrl:@"http://localhost:3000/login" andMethod:@"POST" andKeys:keys andObjs:objs];
         
-        if([response statusCode] >= 200 && [response statusCode] < 400) {
+        if(request) {
             NSLog(@"Success: user logged in!");
-            [self performSegueWithIdentifier:@"loginSegueToRootVC" sender:self];
+           [self performSegueWithIdentifier:@"loginSegueToRootVC" sender:self];
         } else {
             [self alertMssg:@"Try again!" :@"Failed to login." :0];
         }
     }
-
 }
 
 - (IBAction)signupButtonPressed:(id)sender {

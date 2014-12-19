@@ -6,6 +6,7 @@
 //
 
 #import "SignupViewController.h"
+#import "Utilities.h"
 
 @interface SignupViewController ()
 
@@ -40,25 +41,13 @@
         NSString *emailInput = [self.emailTextField text];
         NSString *usernameInput = [self.usernameTextField text];
         NSString *passwordInput = [self.passwordTextField text];
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/signup"]];
-        request.HTTPMethod = @"POST";
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        
         NSArray *keys = [NSArray arrayWithObjects:@"email", @"username", @"password", nil];
         NSArray *objs = [NSArray arrayWithObjects:emailInput, usernameInput, passwordInput, nil];
-        NSDictionary *dataDictionary = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
-        NSError *error = [[NSError alloc] init];
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataDictionary options:NSJSONWritingPrettyPrinted error:&error];
-       // NSString *requestBodyData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]; //For test-printing only
-        request.HTTPBody = jsonData;
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         
-        NSHTTPURLResponse *response = nil;
-        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        BOOL request = [Utilities requestWithUrl:@"http://localhost:3000/signup" andMethod:@"POST" andKeys:keys andObjs:objs];
         
-        if([response statusCode] >= 200 && [response statusCode] < 400) {
-            [self alertMssg:@"You are now registered!" :@"Success." :0];
+        if(request) {
+            [self alertMssg:@"You are now registered." :@"Success!" :0];
             [self performSegueWithIdentifier:@"signupSegueToLogin" sender:self];
         } else {
             [self alertMssg:@"Try again." :@"Failed to register!." :0];

@@ -22,6 +22,7 @@
 		7DAE8FD91A39911B0071EB83 /* PurchaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE8FD81A39911A0071EB83 /* PurchaseCollectionViewCell.m */; };
 		7DD640D51A43F408005A5568 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD640D41A43F408005A5568 /* LoginViewController.m */; };
 		7DD640D81A4400B7005A5568 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD640D71A4400B7005A5568 /* SignupViewController.m */; };
+		7DD640E51A441329005A5568 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD640E41A441329005A5568 /* Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		7DD640D41A43F408005A5568 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7DD640D61A4400B6005A5568 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		7DD640D71A4400B7005A5568 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		7DD640E31A441329005A5568 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		7DD640E41A441329005A5568 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				7DAE8F701A391D4E0071EB83 /* RootViewController.h */,
 				7DAE8F711A391D4E0071EB83 /* RootViewController.m */,
 				7DAE8F4B1A38E0A00071EB83 /* Main.storyboard */,
+				7DD640E31A441329005A5568 /* Utilities.h */,
+				7DD640E41A441329005A5568 /* Utilities.m */,
 				7DD640D61A4400B6005A5568 /* SignupViewController.h */,
 				7DD640D71A4400B7005A5568 /* SignupViewController.m */,
 				7DD640D31A43F408005A5568 /* LoginViewController.h */,
@@ -265,6 +270,7 @@
 				7DAE8F691A38E3000071EB83 /* PurchasesViewController.m in Sources */,
 				7DD640D81A4400B7005A5568 /* SignupViewController.m in Sources */,
 				7DD640D51A43F408005A5568 /* LoginViewController.m in Sources */,
+				7DD640E51A441329005A5568 /* Utilities.m in Sources */,
 				7DAE8FD91A39911B0071EB83 /* PurchaseCollectionViewCell.m in Sources */,
 				7DAE8F471A38E0A00071EB83 /* AppDelegate.m in Sources */,
 				7DAE8F751A392C270071EB83 /* AddViewController.m in Sources */,
