@@ -659,7 +659,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="155" y="343" width="90" height="33"/>
+                                    <rect key="frame" x="150" y="338" width="101" height="38"/>
                                 </variation>
                                 <connections>
                                     <action selector="signupButtonPressed:" destination="Tmo-er-tNy" eventType="touchUpInside" id="Cj5-Dx-MsL"/>
@@ -695,19 +695,79 @@
             </objects>
             <point key="canvasLocation" x="-1560" y="194.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="cyD-eQ-bT1">
             <objects>
-                <viewController id="fSL-0S-nEC" sceneMemberID="viewController">
+                <viewController id="fSL-0S-nEC" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KqI-u5-5dj"/>
                         <viewControllerLayoutGuide type="bottom" id="X0C-Yz-6hF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fdr-fH-2bi">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3c-c6-NTf">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="116" y="118" width="172" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lQ-l2-Frf">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="116" y="181" width="172" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTG-s8-URJ">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="116" y="241" width="172" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9c-R9-Mgv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="148" y="299" width="104" height="36"/>
+                                </variation>
+                                <connections>
+                                    <action selector="joinButtonPressed:" destination="fSL-0S-nEC" eventType="touchUpInside" id="oGT-7c-EZO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="B3c-c6-NTf"/>
+                                <exclude reference="0lQ-l2-Frf"/>
+                                <exclude reference="tTG-s8-URJ"/>
+                                <exclude reference="u9c-R9-Mgv"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="B3c-c6-NTf"/>
+                                <include reference="0lQ-l2-Frf"/>
+                                <include reference="tTG-s8-URJ"/>
+                                <include reference="u9c-R9-Mgv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="B3c-c6-NTf" id="72b-aK-QWw"/>
+                        <outlet property="passwordTextField" destination="tTG-s8-URJ" id="BfT-yd-VML"/>
+                        <outlet property="usernameTextField" destination="0lQ-l2-Frf" id="XBX-Uj-9Wq"/>
                         <segue destination="Tmo-er-tNy" kind="presentation" identifier="signupSegueToLogin" id="p9K-pu-AID"/>
                     </connections>
                 </viewController>
