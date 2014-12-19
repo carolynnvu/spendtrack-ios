@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *addNotes;
 @property (weak, nonatomic) IBOutlet UIImageView *photoBox;
 
-
-
 @property (weak, nonatomic) IBOutlet UIButton *addItem;
 
 @end
