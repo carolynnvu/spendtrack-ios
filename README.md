@@ -38,11 +38,6 @@ User adds purchase > Purchase added to user's purchase array  > Photo added to c
 * Connecting the user's photo library to the app 
 * Adding database support 
 
-
-In creating this app, the challenges that we have faced thus far include figuring out how to reload new pictures as the user scrolls through the purchase photo library, how to reorganize the purchase photo library chronologically or by price, a feature to allow searching of purchases by a keyword, and how the user can interact with the photo library (tapping the photo for more information on the purchase). 
-
-Another challenge is the app’s camera and where to store the photos. Our plan is to add a camera functionality so users can snap photos directly from within the app. The photo will be stored in the phone’s photo library. Right now this seems to be the simplest way to handle the issue of storage while still providing convenience. Furthermore, if at anytime the user deletes the photo from the photo library, the log’s photo will be replaced with a default image. 
-
 #### Partners' responsibilities
 Carolynn | Christina
 ------------ | -------------
