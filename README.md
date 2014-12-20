@@ -26,7 +26,7 @@ This app is for anyone who wants to record their spendings. Specifically, it's f
 
 #### Overall logic and high-level flowchart:
 ```
-##Frontend
+Frontend
 Enter purchase > Add photo and details > Purchase is displayed in list and photo gallery
 Backend
 User adds purchase > Purchase added to user's purchase array  > Photo added to collection
