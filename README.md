@@ -18,25 +18,47 @@ The app doesn’t just stop at letting you add photos. You can look back at the 
 #### Intended audience
 This app is for anyone who wants to record their spendings. Specifically, it's for users that want a visual representation of their spendings that is more than just a text-based list or a standard pie graph.
 
-#### Technical challenges & needed resources
+#### Implemented Features
+* Add, edit, or delete logs
+* Table view display
+* Collection view display (photo gallery)
+* Signing up and logging in
+
+#### Overall logic and high-level flowchart:
+```
+##Frontend
+Enter purchase > Add photo and details > Purchase is displayed in list and photo gallery
+Backend
+User adds purchase > Purchase added to user's purchase array  > Photo added to collection
+```
+
+#### Technical Challenges Faced 
+* Building the photo gallery and table view
+* Adding interactivity to both display options
+* Connecting the user's photo library to the app 
+* Adding database support 
+
+
 In creating this app, the challenges that we have faced thus far include figuring out how to reload new pictures as the user scrolls through the purchase photo library, how to reorganize the purchase photo library chronologically or by price, a feature to allow searching of purchases by a keyword, and how the user can interact with the photo library (tapping the photo for more information on the purchase). 
 
 Another challenge is the app’s camera and where to store the photos. Our plan is to add a camera functionality so users can snap photos directly from within the app. The photo will be stored in the phone’s photo library. Right now this seems to be the simplest way to handle the issue of storage while still providing convenience. Furthermore, if at anytime the user deletes the photo from the photo library, the log’s photo will be replaced with a default image. 
 
-### Overall logic and high-level flowchart:
-```
-User end
-Enter purchase > Add photo and details > Purchase shows up in list and photo collection
-Back end
-User adds purchase > Purchase added to array > Photo added to collection
-```
+#### Partners' responsibilities
+Carolynn | Christina
+------------ | -------------
+Controller logic and Storyboard | Collection view interactivity
+Collection view setup and display | Table view interactivity
+Table view setup and display | Add function
+Photo library connection | Edit function
+Database support | Delete function
 
-### Partners' responsibilities
-We plan on splitting the work evenly. We will both work on the logic behind the app. Carolynn will focus on the scrolling view for the photo library. Christina will focus on the user interaction -  tapping a photo in the library will reveal information about the purchase.
-
-### Projected features: 
-Our plan is to have the following features in the app by the end of the semester: adding/removing an expense with a corresponding photo, having expense categories for each type of transaction (food, laundry, travel, etc.), displaying the total amount spent by month or year, including a list of purchases (when user is in portrait orientation), and an interactive photo library (when user is in landscape orientation). Photos in the photo library are highlighted with certain colors to provide a visual representation of cost. The purchase photo library may be organized chronologically by purchase date or, organized by cost.
-
-### Additional features: 
-If we pursue this project in the future, we would consider implementing the following additional features: a picture collage with each picture’s size proportional to the purchase’s price. This will give a visual comparison of different purchases and provides the user another way to see his/her spending patterns. We’d also like credit card integration where purchases made with credit cards are automatically logged for the user. Furthermore, we’d like to allow filters so that users can choose which type of purchases made with cards are actually logged. We’d also like to include more visual presentations like pie graphs as secondary displays as well as alert messages. 
-
+#### Additional Features: 
+Features we'd like to implement in the future:
+* Display purchases by week, month, or year
+* Activate table view on portrait orientation
+* Activate photo gallery on landscape orientation 
+* Sort photo gallery based on cost and chronologically
+* Highlight photos with encoded colors 
+* Secondary visual displays such as pie graphs 
+* Credit card integration for automatic logging
+* Functionalitly to filter displays 
