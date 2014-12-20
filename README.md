@@ -43,9 +43,9 @@ Carolynn | Christina
 ------------ | -------------
 Controller logic and Storyboard | Collection view interactivity
 Collection view setup and display | Table view interactivity
-Table view setup and display | Add function
-Photo library connection | Edit function
-Database support | Delete function
+Table view setup and display | Add purchase function
+Photo library connection | Edit purchase function
+Database support | Delete purchase function
 
 #### Additional Features: 
 Features we'd like to implement in the future:
